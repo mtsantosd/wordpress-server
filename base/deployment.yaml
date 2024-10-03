@@ -17,5 +17,5 @@ spec:
     spec:
       containers:
         - image: quay.io/dsantosmt/wordpress:v1
-        imagePullPolicy: Always
-        name: wp-web
+          imagePullPolicy: Always
+          name: wp-web
