@@ -19,6 +19,6 @@ spec:
         - image: registry.redhat.io/rhel9/mysql-80
           imagePullPolicy: Always
           name: wp-mysql
-          imagePullSecrets:
-          - name: 13421688-redhat-registry-pull-secret
+     imagePullSecrets:
+        - name: 13421688-redhat-registry-pull-secret
 
