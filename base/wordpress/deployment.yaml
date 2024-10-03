@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: wp-server
+  name: wp-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wp-server
+  template:
+    metadata:
+      labels:
+        app: wp-server
+    spec:
+      containers:
+        - image: quay.io/dsantosmt/wordpress:v1
+          imagePullPolicy: Always
+          name: wp-server
+          imagePullSecrets:
+          - name: quay-credentials
