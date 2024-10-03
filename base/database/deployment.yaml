@@ -20,5 +20,5 @@ spec:
           imagePullPolicy: Always
           name: wp-mysql
           imagePullSecrets:
-          - name: redhat-registry
+          - name: 13421688-redhat-registry-pull-secret
 
