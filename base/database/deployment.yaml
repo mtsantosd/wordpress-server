@@ -20,5 +20,5 @@ spec:
           imagePullPolicy: Always
           name: wp-mysql
           imagePullSecrets:
-          - name: quay-credentials
+          - name: redhat-registry
 
