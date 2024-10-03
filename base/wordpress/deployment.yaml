@@ -19,5 +19,5 @@ spec:
         - image: quay.io/dsantosmt/wordpress:v1
           imagePullPolicy: Always
           name: wp-server
-          imagePullSecrets:
-          - name: quay-credentials
+      imagePullSecrets:
+        - name: quay-credentials

@@ -3,22 +3,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: wp-mysql
-  name: wp-mysql
+    app: mysql-server
+  name: mysql-server
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: wp-mysql
+      app: mysql-server
   template:
     metadata:
       labels:
-        app: wp-mysql
+        app: mysql-server
     spec:
       containers:
         - image: registry.redhat.io/rhel9/mysql-80
           imagePullPolicy: Always
-          name: wp-mysql
-     imagePullSecrets:
+          name: mysql-server
+      imagePullSecrets:
         - name: 13421688-redhat-registry-pull-secret
-
