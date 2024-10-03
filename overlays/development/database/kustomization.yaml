@@ -3,4 +3,4 @@ kind: Kustomization
 namespace: wp-dev
 namePrefix: dev-
 resources:
-- ../../../base/
+- ../../../base/database
