@@ -19,5 +19,3 @@ spec:
         - image: registry.redhat.io/rhel9/mysql-80
           imagePullPolicy: Always
           name: mysql-server
-      imagePullSecrets:
-        - name: 13421688-redhat-registry-pull-secret
