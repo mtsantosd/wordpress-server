@@ -39,5 +39,6 @@ spec:
                 key: password
           imagePullPolicy: IfNotPresent
           name: mysql-server
+      nodeName: node5
       imagePullSecrets:
         - name: 13421688-redhat-registry-pull-secret
