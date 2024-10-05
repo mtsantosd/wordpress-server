@@ -6,7 +6,7 @@ metadata:
     app: wp-server
   name: wp-server
 spec:
-  replicas: 5
+  replicas: 2
   selector:
     matchLabels:
       app: wp-server
@@ -20,7 +20,7 @@ spec:
           imagePullPolicy: Always
           resources:
             requests:
-              memory: 100Mi
+              memory: 50Mi
             limits:
               memory: 100Mi
           env:
