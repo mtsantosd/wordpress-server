@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: test-env
+namePrefix: test-
+patches:
+- patch: | 
+    - op: replace
+      path: /spec/replicas
+      value: 3
+  target:
+    kind: Deployment
+    name: nginx-web
+resources:
+- ../../base/
+configMapGenerator:
+- name: nginx-configmap
+  behavior: replace
+  files:
+    - index.html
+

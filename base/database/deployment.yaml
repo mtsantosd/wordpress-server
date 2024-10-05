@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mysql-wp
+  name: mysql-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-wp
+  template:
+    metadata:
+      labels:
+        app: mysql-wp
+    spec:
+      containers:
+        - image: registry.redhat.io/rhel9/mysql-80@sha256:854905b75e5cfcb6f55fa53fb32c393ca34de1999d7714b026a53cff8b0694b2
+          resources:
+            requests:
+              memory: 50Mi
+            limits:
+              memory: 100Mi
+          env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mysql-pass
+                key: password
+          - name: MYSQL_DATABASE
+            value: wordpress
+          - name: MYSQL_USER
+            value: wordpress
+          - name: MYSQL_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mysql-pass
+                key: password
+          imagePullPolicy: IfNotPresent
+          name: mysql-server
+      nodeName: node4
+      imagePullSecrets:
+        - name: 13421688-redhat-registry-pull-secret
