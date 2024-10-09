@@ -18,11 +18,6 @@ spec:
       containers:
         - image: quay.io/dsantosmt/wordpress:v1
           imagePullPolicy: Always
-          resources:
-            requests:
-              memory: 64Mi
-            limits:
-              memory: 128Mi
           env:
           - name: WORDPRESS_DB_HOST
             value: 192.168.0.69
