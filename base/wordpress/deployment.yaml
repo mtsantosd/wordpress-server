@@ -20,7 +20,8 @@ spec:
           imagePullPolicy: Always
           env:
           - name: WORDPRESS_DB_HOST
-            value: 192.168.0.69
+            value: mysql-server
+            #value: 192.168.0.69
           - name: WORDPRESS_DB_PASSWORD
             valueFrom:
               secretKeyRef:
